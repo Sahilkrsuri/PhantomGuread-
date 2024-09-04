@@ -1,0 +1,24 @@
+{
+  "name": "phantomguread-",
+  "version": "1.0.0",
+  "description": "PhantomGuard is a passive CAPTCHA solution that enhances web security by analyzing user behavior, like mouse movements and keystrokes, to differentiate humans from bots without disrupting the user experience. It provides real-time logging and is scalable, making it ideal for high-traffic websites to prevent automated attacks.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon backend/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "moment-timezone": "^0.5.45",
+    "mongodb": "^6.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
