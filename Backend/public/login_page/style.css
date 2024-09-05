@@ -1,0 +1,171 @@
+body {
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+header {
+    background-color: white;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #020b50;;
+}
+
+.left-logo {
+    align-items: center;
+    display: flex;
+    max-width: 70%;
+}
+.right-logo{
+    align-items: center;
+    display: flex;
+    max-width: 20%;
+}
+
+
+h1 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+header p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.login_section_description{
+    color: #020b50;
+    font-weight: 600;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.card {
+    border-radius: 6px;
+    box-shadow: 0 2px 5px -1px #32325d40, 0 1px 3px -1px #0000004d;
+    margin: auto;
+    max-width: 400px;
+    overflow: hidden;
+    padding: 20px 16px;
+    position: relative;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+
+
+.card form{
+    padding: 0 40px;
+  box-sizing: border-box;
+}
+
+form .aadhaar-input{
+    position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 40px 0;
+}
+
+
+.aadhaar-input input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.aadhaar-input label{
+    position:absolute;
+    top: 50%;
+    left: 5px;
+    color: rgb(92, 89, 88);
+    transform: (-50%);
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.aadhaar-input span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2%;
+    background: #054d8b;
+  }
+  .aadhaar-input input:focus ~ label,
+  .aadhaar-input input:valid ~ label{
+    top: -15px;
+    color:#054d8b;
+  }
+  .aadhaar-input input:focus ~ span::before,
+  .aadhaar-input input:valid ~ span::before{
+    width: 100%;
+  }
+
+.captcha-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.captcha {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.captcha button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0 0.25rem;
+}
+
+button[type="submit"] {
+    background: linear-gradient(to right, #020b50, #0088ff);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    align-items: center;
+}
+
+footer {
+    background-color: #020348;
+    color: white;
+    bottom: 0;
+    height: auto;
+    text-align: center;
+    font-size: 0.8rem;
+    left: 0;
+    padding-bottom: .9rem;
+    padding-top: .9rem;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}

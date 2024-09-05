@@ -20,7 +20,7 @@ if (!fs.existsSync(logsDir)) {
 app.post('/logMouseMovements', (req, res) => {
     const data = req.body;
     const timestamp = moment().tz('Asia/Kolkata').format('YYYY-MM-DD HH:mm:ss.SSS');
-    
+
     // Append timestamp to the data
     data.timestamp = timestamp;
 
@@ -29,11 +29,11 @@ app.post('/logMouseMovements', (req, res) => {
 
     // If file does not exist, create and add header
     if (!fs.existsSync(logFile)) {
-        fs.writeFileSync(logFile, 'timestamp,numSegments,distinctMouseMotions,avgLength,avgTime,avgSpeed,varSpeed,varAcc\n');
+        fs.writeFileSync(logFile, 'timestamp,numSegments,distinctMouseMotions,avgLength,avgTime,avgSpeed,varSpeed,varAcc,humanInteraction\n');
     }
 
     // Log the data
-    const logData = `${data.timestamp},${data.numSegments},${data.distinctMouseMotions},${data.avgLength},${data.avgTime},${data.avgSpeed},${data.varSpeed},${data.varAcc}\n`;
+    const logData = `${data.timestamp},${data.numSegments},${data.distinctMouseMotions},${data.avgLength},${data.avgTime},${data.avgSpeed},${data.varSpeed},${data.varAcc},${data.humanInteraction}\n`;
     fs.appendFile(logFile, logData, (err) => {
         if (err) {
             console.error('Failed to log data', err);
@@ -47,26 +47,6 @@ app.post('/logMouseMovements', (req, res) => {
 // Routes to serve HTML files
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'about.html'));
-});
-
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'login.html'));
-});
-
-app.get('/signup', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'signup.html'));
-});
-
-app.get('/features', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'features.html'));
-});
-
-app.get('/how-it-works', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'how-it-works.html'));
 });
 
 // Start the server

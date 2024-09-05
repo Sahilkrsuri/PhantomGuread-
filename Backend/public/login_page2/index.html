@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Identification Authority of India</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="left-logo">
+          <img
+            src="../Assets/Image/uidai_english_logo.svg"
+            alt="uadai english logo"
+            class="emblem"
+          />
+        </div>
+        <div class="right-logo">
+          <img
+            src="../Assets/Image/aadhar_logo.svg"
+            alt="Aadhaar Logo"
+            class="aadhaar-logo"
+          />
+        </div>
+      </header>
+    <nav>
+        <div class="my-aadhaar">myAadhaar</div>
+        <div class="language-selector">
+            <span>English</span>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="../Aadhaar_home_page/index.html"> Dashboard </a>> Retrieve EID / Aadhaar number
+    </div>
+
+    <main>
+        <div class="content">
+            <h2>Select 12 Digit Aadhaar Number/ 28 digit Enrolment ID</h2>
+            <form>
+                <div class="radio-group">
+                    <input type="radio" id="aadhaar" name="idType" checked>
+                    <label for="aadhaar">Aadhaar Number</label>
+                    <input type="radio" id="enrolment" name="idType">
+                    <label for="enrolment">Enrolment ID Number</label>
+                </div>
+                <input type="text" placeholder="Enter Name">
+                <div class="input-group">
+                    <input type="text" placeholder="Enter Mobile Number">
+                    <span>OR</span>
+                    <input type="text" placeholder="Enter Email Address">
+                </div>
+                <button type="submit" class="send-otp">Send OTP</button>
+            </form>
+        </div>
+        <aside class="faq-sidebar">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">What details can I update through Update Aadhaar online Service?</div>
+                    <div class="faq-answer">You can update your name, address, date of birth, gender, mobile number, and email address through the Update Aadhaar online Service.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is there any fee involved for Online updation of Demographics details?</div>
+                    <div class="faq-answer">Yes, there is a nominal fee of Rs. 50 for online updation of demographic details (Name, Address, Date of Birth, Gender, Mobile Number, and Email).</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How many times Aadhaar data can be updated?</div>
+                    <div class="faq-answer">There is no limit on the number of times you can update your Aadhaar data. However, each update request is processed separately and may require appropriate supporting documents.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What changes can I do to my name in Aadhaar?</div>
+                    <div class="faq-answer">You can make minor corrections, change the spelling, add or remove parts of your name, or change your name entirely. However, any change in name requires supporting documents as proof.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What documents are required for Online Address Update?</div>
+                    <div class="faq-answer">For online address update, you need to provide a scanned copy of a valid proof of address document. Acceptable documents include Passport, Bank Statement, Utility Bill, or any government-issued document with your new address.</div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        question.addEventListener('click', () => {
+            const isOpen = answer.style.display === 'block';
+            
+            // Close all other open FAQs
+            document.querySelectorAll('.faq-answer').forEach(a => {
+                a.style.display = 'none';
+            });
+
+            // Toggle the clicked FAQ
+            answer.style.display = isOpen ? 'none' : 'block';
+        });
+    });
+});
+
+    </script>
+    <script src="../script.js"></script>
+
+</body>
+</html>
